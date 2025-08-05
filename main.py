@@ -7,6 +7,19 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Inject CSS
+hide_menu_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    button[title="View app source code"] {display: none;}
+    button[title="Edit this app"] {display: none;}
+    button[title="Share this app"] {display: none;}
+    </style>
+"""
+st.markdown(hide_menu_style, unsafe_allow_html=True)
+
 # Fungsi untuk auto-tutup sidebar
 def auto_close_sidebar():
     hide_sidebar = """
